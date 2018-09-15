@@ -1,6 +1,4 @@
 package com.zh.spider.generate.model;
-import org.apache.ibatis.annotations.Mapper;
-
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -10,10 +8,9 @@ import java.util.List;
 *
 *  @author author
 */
-@Mapper
 public class SysUrl implements Serializable {
 
-    private static final long serialVersionUID = 1536984761046L;
+    private static final long serialVersionUID = 1536996662182L;
 
 
     /**
@@ -41,6 +38,18 @@ public class SysUrl implements Serializable {
     */
     private Integer level;
 
+    /**
+    * 
+    * isNullAble:1
+    */
+    private java.time.LocalDateTime create;
+
+    /**
+    * 
+    * isNullAble:1
+    */
+    private java.time.LocalDateTime update;
+
 
     public void setId(Integer id){this.id = id;}
 
@@ -57,6 +66,14 @@ public class SysUrl implements Serializable {
     public void setLevel(Integer level){this.level = level;}
 
     public Integer getLevel(){return this.level;}
+
+    public void setCreate(java.time.LocalDateTime create){this.create = create;}
+
+    public java.time.LocalDateTime getCreate(){return this.create;}
+
+    public void setUpdate(java.time.LocalDateTime update){this.update = update;}
+
+    public java.time.LocalDateTime getUpdate(){return this.update;}
     @Override
     public String toString() {
         return "SysUrl{" +
@@ -64,6 +81,8 @@ public class SysUrl implements Serializable {
                 "url='" + url + '\'' +
                 "remark='" + remark + '\'' +
                 "level='" + level + '\'' +
+                "create='" + create + '\'' +
+                "update='" + update + '\'' +
             '}';
     }
 
@@ -159,6 +178,30 @@ public class SysUrl implements Serializable {
         public Integer getLevelSt(){return this.levelSt;}
 
         public Integer getLevelEd(){return this.levelEd;}
+
+        private List<java.time.LocalDateTime> createList;
+
+        public List<java.time.LocalDateTime> getCreateList(){return this.createList;}
+
+        private java.time.LocalDateTime createSt;
+
+        private java.time.LocalDateTime createEd;
+
+        public java.time.LocalDateTime getCreateSt(){return this.createSt;}
+
+        public java.time.LocalDateTime getCreateEd(){return this.createEd;}
+
+        private List<java.time.LocalDateTime> updateList;
+
+        public List<java.time.LocalDateTime> getUpdateList(){return this.updateList;}
+
+        private java.time.LocalDateTime updateSt;
+
+        private java.time.LocalDateTime updateEd;
+
+        public java.time.LocalDateTime getUpdateSt(){return this.updateSt;}
+
+        public java.time.LocalDateTime getUpdateEd(){return this.updateEd;}
 
         private QueryBuilder (){
             this.fetchFields = new HashMap<>();
@@ -335,6 +378,88 @@ public class SysUrl implements Serializable {
             setFetchFields("excludeFields","level");
             return this;
         }
+
+        public QueryBuilder createBetWeen(java.time.LocalDateTime createSt,java.time.LocalDateTime createEd){
+            this.createSt = createSt;
+            this.createEd = createEd;
+            return this;
+        }
+
+        public QueryBuilder createGreaterEqThan(java.time.LocalDateTime createSt){
+            this.createSt = createSt;
+            return this;
+        }
+        public QueryBuilder createLessEqThan(java.time.LocalDateTime createEd){
+            this.createEd = createEd;
+            return this;
+        }
+
+
+        public QueryBuilder create(java.time.LocalDateTime create){
+            setCreate(create);
+            return this;
+        }
+
+        public QueryBuilder createList(java.time.LocalDateTime ... create){
+            this.createList = solveNullList(create);
+            return this;
+        }
+
+        public QueryBuilder createList(List<java.time.LocalDateTime> create){
+            this.createList = create;
+            return this;
+        }
+
+        public QueryBuilder fetchCreate(){
+            setFetchFields("fetchFields","create");
+            return this;
+        }
+
+        public QueryBuilder excludeCreate(){
+            setFetchFields("excludeFields","create");
+            return this;
+        }
+
+        public QueryBuilder updateBetWeen(java.time.LocalDateTime updateSt,java.time.LocalDateTime updateEd){
+            this.updateSt = updateSt;
+            this.updateEd = updateEd;
+            return this;
+        }
+
+        public QueryBuilder updateGreaterEqThan(java.time.LocalDateTime updateSt){
+            this.updateSt = updateSt;
+            return this;
+        }
+        public QueryBuilder updateLessEqThan(java.time.LocalDateTime updateEd){
+            this.updateEd = updateEd;
+            return this;
+        }
+
+
+        public QueryBuilder update(java.time.LocalDateTime update){
+            setUpdate(update);
+            return this;
+        }
+
+        public QueryBuilder updateList(java.time.LocalDateTime ... update){
+            this.updateList = solveNullList(update);
+            return this;
+        }
+
+        public QueryBuilder updateList(List<java.time.LocalDateTime> update){
+            this.updateList = update;
+            return this;
+        }
+
+        public QueryBuilder fetchUpdate(){
+            setFetchFields("fetchFields","update");
+            return this;
+        }
+
+        public QueryBuilder excludeUpdate(){
+            setFetchFields("excludeFields","update");
+            return this;
+        }
         private <T>List<T> solveNullList(T ... objs){
             if (objs != null){
             List<T> list = new ArrayList<>();
@@ -425,6 +550,30 @@ public class SysUrl implements Serializable {
         public Integer getLevelSt(){return this.levelSt;}
 
         public Integer getLevelEd(){return this.levelEd;}
+
+        private List<java.time.LocalDateTime> createList;
+
+        public List<java.time.LocalDateTime> getCreateList(){return this.createList;}
+
+        private java.time.LocalDateTime createSt;
+
+        private java.time.LocalDateTime createEd;
+
+        public java.time.LocalDateTime getCreateSt(){return this.createSt;}
+
+        public java.time.LocalDateTime getCreateEd(){return this.createEd;}
+
+        private List<java.time.LocalDateTime> updateList;
+
+        public List<java.time.LocalDateTime> getUpdateList(){return this.updateList;}
+
+        private java.time.LocalDateTime updateSt;
+
+        private java.time.LocalDateTime updateEd;
+
+        public java.time.LocalDateTime getUpdateSt(){return this.updateSt;}
+
+        public java.time.LocalDateTime getUpdateEd(){return this.updateEd;}
 
 
         public ConditionBuilder idBetWeen(Integer idSt,Integer idEd){
@@ -539,6 +688,58 @@ public class SysUrl implements Serializable {
             return this;
         }
 
+        public ConditionBuilder createBetWeen(java.time.LocalDateTime createSt,java.time.LocalDateTime createEd){
+            this.createSt = createSt;
+            this.createEd = createEd;
+            return this;
+        }
+
+        public ConditionBuilder createGreaterEqThan(java.time.LocalDateTime createSt){
+            this.createSt = createSt;
+            return this;
+        }
+        public ConditionBuilder createLessEqThan(java.time.LocalDateTime createEd){
+            this.createEd = createEd;
+            return this;
+        }
+
+
+        public ConditionBuilder createList(java.time.LocalDateTime ... create){
+            this.createList = solveNullList(create);
+            return this;
+        }
+
+        public ConditionBuilder createList(List<java.time.LocalDateTime> create){
+            this.createList = create;
+            return this;
+        }
+
+        public ConditionBuilder updateBetWeen(java.time.LocalDateTime updateSt,java.time.LocalDateTime updateEd){
+            this.updateSt = updateSt;
+            this.updateEd = updateEd;
+            return this;
+        }
+
+        public ConditionBuilder updateGreaterEqThan(java.time.LocalDateTime updateSt){
+            this.updateSt = updateSt;
+            return this;
+        }
+        public ConditionBuilder updateLessEqThan(java.time.LocalDateTime updateEd){
+            this.updateEd = updateEd;
+            return this;
+        }
+
+
+        public ConditionBuilder updateList(java.time.LocalDateTime ... update){
+            this.updateList = solveNullList(update);
+            return this;
+        }
+
+        public ConditionBuilder updateList(List<java.time.LocalDateTime> update){
+            this.updateList = update;
+            return this;
+        }
+
         private <T>List<T> solveNullList(T ... objs){
             if (objs != null){
             List<T> list = new ArrayList<>();
@@ -577,6 +778,14 @@ public class SysUrl implements Serializable {
         }
         public Builder level(Integer level){
             this.obj.setLevel(level);
+            return this;
+        }
+        public Builder create(java.time.LocalDateTime create){
+            this.obj.setCreate(create);
+            return this;
+        }
+        public Builder update(java.time.LocalDateTime update){
+            this.obj.setUpdate(update);
             return this;
         }
         public SysUrl build(){return obj;}

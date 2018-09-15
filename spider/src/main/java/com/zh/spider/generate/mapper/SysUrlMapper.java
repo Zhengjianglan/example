@@ -12,5 +12,6 @@ import com.zh.spider.generate.mapper.base.SysUrlBaseMapper;
 @Mapper
 public interface SysUrlMapper extends SysUrlBaseMapper{
 
+    int DeleteById(int id);
 
 }
