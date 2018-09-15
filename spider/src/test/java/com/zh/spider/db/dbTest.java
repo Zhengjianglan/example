@@ -1,5 +1,7 @@
 package com.zh.spider.db;
 
+import com.zh.spider.common.ErrorType;
+import com.zh.spider.common.ZhException;
 import com.zh.spider.generate.mapper.SysUrlMapper;
 import com.zh.spider.generate.model.SysUrl;
 import lombok.extern.slf4j.Slf4j;
@@ -60,6 +62,6 @@ public class dbTest {
         insert.setUpdate(LocalDateTime.now());
         int result = urlMapper.insertSysUrl(insert);
         System.out.print(result + insert.toString());
-        throw new Exception("Test");
+        throw ZhException.Create(ErrorType.UnException,"Test");
     }
 }
