@@ -1,4 +1,6 @@
 package com.zh.spider.generate.model;
+import org.apache.ibatis.annotations.Mapper;
+
 import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,11 +8,12 @@ import java.util.Map;
 import java.util.List;
 /**
 *
-*  @author zhengjianglan
+*  @author author
 */
+@Mapper
 public class SysUrl implements Serializable {
 
-    private static final long serialVersionUID = 1536919248532L;
+    private static final long serialVersionUID = 1536984761046L;
 
 
     /**
@@ -22,7 +25,7 @@ public class SysUrl implements Serializable {
 
     /**
     * 
-    * isNullAble:0
+    * isNullAble:1
     */
     private String url;
 

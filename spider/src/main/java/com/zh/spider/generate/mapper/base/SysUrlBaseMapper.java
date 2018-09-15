@@ -6,7 +6,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import com.zh.spider.generate.model.SysUrl;
 /**
-*  @author zhengjianglan
+*  @author author
 */
 @Mapper
 public interface SysUrlBaseMapper {
